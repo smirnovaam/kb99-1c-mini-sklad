@@ -270,6 +270,7 @@
 			<Catalog>Контрагенты</Catalog>
 			<Document>ПоступлениеТоваров</Document>
 			<Document>РеализацияТоваров</Document>
+			<Report>ОборотыПоТоварам</Report>
 			<AccumulationRegister>ОстаткиТоваров</AccumulationRegister>
 		</ChildObjects>
 	</Configuration>
