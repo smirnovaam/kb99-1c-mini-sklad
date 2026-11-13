@@ -25,8 +25,8 @@
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.Продажи</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.СтоимостьМатериалов</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ОстаткиТоваровНаДату</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">82dcfd14-4458-4823-898d-623804af662d</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.ПартииТоваров</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ЦеныТоваров</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

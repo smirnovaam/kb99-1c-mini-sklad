@@ -9,13 +9,6 @@
 		<field xsi:type="DataSetFieldField">
 			<dataPath>Товар</dataPath>
 			<field>Товар</field>
-			<role>
-				<dcscom:dimension>true</dcscom:dimension>
-			</role>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Ссылка</dataPath>
-			<field>Ссылка</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
 			<dataPath>НаименованиеТовара</dataPath>
@@ -28,30 +21,26 @@
 			</title>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Количество</dataPath>
-			<field>Количество</field>
+			<dataPath>Остаток</dataPath>
+			<field>Остаток</field>
 			<title xsi:type="v8:LocalStringType">
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Количество</v8:content>
+					<v8:content>Остаток</v8:content>
 				</v8:item>
 			</title>
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
-	спрТовары.Ссылка КАК Ссылка,
-	спрТовары.Наименование КАК НаименованиеТовара,
-	ОстаткиТоваровОстатки.Товар КАК Товар,
-	ОстаткиТоваровОстатки.КоличествоОстаток КАК Количество
+	СпрТовары.Наименование КАК НаименованиеТовара,
+	ЕСТЬNULL(ОстаткиТоваровОстатки.КоличествоОстаток, 0) КАК Остаток
 ИЗ
-	Справочник.Товары КАК спрТовары
-		ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ОстаткиТоваров.Остатки(&amp;ДатаОтчета, ) КАК ОстаткиТоваровОстатки
-		ПО (ОстаткиТоваровОстатки.Товар = спрТовары.Ссылка)
+	Справочник.Товары КАК СпрТовары
+	ЛЕВОЕ СОЕДИНЕНИЕ РегистрНакопления.ОстаткиТоваров.Остатки(КОНЕЦПЕРИОДА(&amp;ДатаОтчета, ДЕНЬ)) 
+		КАК ОстаткиТоваровОстатки
+	ПО ОстаткиТоваровОстатки.Товар = СпрТовары.Ссылка
 ГДЕ
-	спрТовары.ЭтоГруппа = &amp;ЛОЖЬ
-
-УПОРЯДОЧИТЬ ПО
-	НаименованиеТовара</query>
+	СпрТовары.ЭтоГруппа = ЛОЖЬ</query>
 	</dataSet>
 	<parameter>
 		<name>Период</name>
@@ -87,20 +76,6 @@
 		<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 		<useRestriction>false</useRestriction>
 	</parameter>
-	<parameter>
-		<name>ЛОЖЬ</name>
-		<title xsi:type="v8:LocalStringType">
-			<v8:item>
-				<v8:lang>ru</v8:lang>
-				<v8:content>ЛОЖЬ</v8:content>
-			</v8:item>
-		</title>
-		<valueType>
-			<v8:Type>xs:boolean</v8:Type>
-		</valueType>
-		<value xsi:type="xs:boolean">false</value>
-		<useRestriction>true</useRestriction>
-	</parameter>
 	<settingsVariant>
 		<dcsset:name>Основной</dcsset:name>
 		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
@@ -110,7 +85,7 @@
 					<dcsset:field>НаименованиеТовара</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Количество</dcsset:field>
+					<dcsset:field>Остаток</dcsset:field>
 				</dcsset:item>
 			</dcsset:selection>
 			<dcsset:dataParameters>
