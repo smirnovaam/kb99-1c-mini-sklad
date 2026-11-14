@@ -266,6 +266,7 @@
 			<Language>Русский</Language>
 			<Subsystem>МиниСклад</Subsystem>
 			<CommonModule>РаботаСДокументами</CommonModule>
+			<Constant>ПроцентНаценки</Constant>
 			<Catalog>Товары</Catalog>
 			<Catalog>Контрагенты</Catalog>
 			<Document>ПоступлениеТоваров</Document>

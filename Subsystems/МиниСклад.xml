@@ -27,6 +27,7 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Report.ОстаткиТоваровНаДату</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.ПартииТоваров</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.ЦеныТоваров</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Constant.ПроцентНаценки</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>
