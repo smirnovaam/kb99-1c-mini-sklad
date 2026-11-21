@@ -265,7 +265,13 @@
 		<ChildObjects>
 			<Language>Русский</Language>
 			<Subsystem>МиниСклад</Subsystem>
+			<Role>Администратор</Role>
+			<Role>Кладовщик</Role>
+			<Role>Менеджер</Role>
+			<Role>Гость</Role>
 			<CommonModule>РаботаСДокументами</CommonModule>
+			<CommonModule>РегламентныеПроцедуры</CommonModule>
+			<ScheduledJob>КонтрольОтрицательныхОстатков</ScheduledJob>
 			<Constant>ПроцентНаценки</Constant>
 			<Catalog>Товары</Catalog>
 			<Catalog>Контрагенты</Catalog>
