@@ -271,6 +271,7 @@
 			<Role>Гость</Role>
 			<CommonModule>РаботаСДокументами</CommonModule>
 			<CommonModule>РегламентныеПроцедуры</CommonModule>
+			<HTTPService>ОбменДаннымиJSON</HTTPService>
 			<ScheduledJob>КонтрольОтрицательныхОстатков</ScheduledJob>
 			<Constant>ПроцентНаценки</Constant>
 			<Catalog>Товары</Catalog>
